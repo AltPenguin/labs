@@ -31,10 +31,10 @@ void inorder(struct node *root) {
 
 // Вклиниваем узелок
 struct node *insert(struct node *node, int key) {
-  // Возвращаем новый узелок, если дерево голенькое
+  // Возвращаем новый узелок, если дерево голенькое (но мы не подсматриваем)
   if (node == NULL) return newNode(key);
 
-  // Прыгаем в нужное место и и вставляем узелок
+  // Прыгаем в нужное место и вставляем узелок
   if (key < node->key)
     node->left = insert(node->left, key);
   else
