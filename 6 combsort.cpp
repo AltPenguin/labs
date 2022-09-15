@@ -50,7 +50,7 @@ int main()
  
     combSort(a, n);
  
-    printf("Sorted array: \n");
+    printf("Отсортированная строчка: \n");
     for (int i=0; i<n; i++)
         printf("%d ", a[i]);
  
