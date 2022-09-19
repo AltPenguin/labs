@@ -2,6 +2,7 @@
 #include <algorithm>
 using namespace std;
 
+
 int find_substring(string str, string pattern) {
 
 	// Исключаем вариант пустой сторки. Она не должна быть такой же, как её создатель
@@ -39,11 +40,9 @@ int find_substring(string str, string pattern) {
 }
 
 int main() {
-
-	cout << find_substring("abcd", "abcd") << endl;
-	cout << find_substring("abcd", "ab") << endl;
-	cout << find_substring("ab", "abcd") << endl;
-	cout << find_substring("ababc", "abc") << endl;
+	setlocale(LC_ALL, "ru_RU.UTF-8")
+	cout << find_substring("aabaabbaaabaabaabaabaabbaabb", "aabbaab") << endl;
+	cout << find_substring("стогистогстогигстогстогиглстогстогигластогигластог", "игла") << endl;
 
 	return 0;
 }
