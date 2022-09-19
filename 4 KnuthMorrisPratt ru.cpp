@@ -46,7 +46,7 @@ void find_substring(string text, string pattern)
         if (text[i] == pattern[j])
         {
             if (++j == n) {
-                cout << i - j + 1 << endl;
+                cout << (i - j + 1) << endl;
             }
         }
         else if (j > 0)
@@ -60,6 +60,6 @@ void find_substring(string text, string pattern)
 // Исполнение
 int main()
 {
-    find_substring("aabaabbaaabaabaabaabaabbaabb", "aabbaab");
+    find_substring("стогистогстогигстогстогиглстогстогигластогигластог", "игла");
     return 0;
 }
