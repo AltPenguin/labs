@@ -1,11 +1,17 @@
-#include <bits/stdc++.h>
-using namespace std;
+# include <limits.h>
+# include <string.h>
+# include <stdio.h>
+ 
 # define NO_OF_CHARS 256
  
-// Алгоритм поиска Бойера-Мура
-// эвристика плохого характера
-void badCharHeuristic( string str, int size,
-                        int badchar[NO_OF_CHARS])
+// Вспомогательная функция для получения максимум двух целых чисел
+int max(int a, int b)
+{
+    return (a > b) ? a : b;
+}
+ 
+// Функция предварительной обработки для эвристики плохого характера Бойера Мура
+void badCharHeuristic(char *str, int size, int badchar[NO_OF_CHARS])
 {
     int i;
  
@@ -18,53 +24,32 @@ void badCharHeuristic( string str, int size,
         badchar[(int) str[i]] = i;
 }
  
-/* Функция поиска по шаблону, использующая "плохую"
-эвристику характера алгоритма Бойера Мура */
-void search( string txt, string pat)
+void search(char *txt, char *pat)
 {
-    int m = pat.size();
-    int n = txt.size();
+    int m = strlen(pat);
+    int n = strlen(txt);
  
     int badchar[NO_OF_CHARS];
  
-    /* Заполните массив плохих символов, вызвав
-     функцию предварительной обработки badCharHeuristic()
-     для данного шаблона */
     badCharHeuristic(pat, m, badchar);
  
     int s = 0; // s — смещение шаблона относительно текста
-
-    while(s <= (n - m))
+    while (s <= (n - m))
     {
         int j = m - 1;
  
-        /* Продолжайте уменьшать индекс j шаблона, 
-        пока символы шаблона и текста совпадают в этом смещении s */
-        while(j >= 0 && pat[j] == txt[s + j])
+        while (j >= 0 && pat[j] == txt[s + j])
             j--;
  
-        /* Если шаблон присутствует в текущей смене, то индекс j 
-        станет равным -1 после цикла, описанного выше. */
         if (j < 0)
         {
-            cout << "pattern occurs at shift = " <<  s << endl;
+            printf("\n %d", s/2);
  
-            /* Сдвиньте шаблон так, чтобы следующий символ 
-            в тексте совпадал с последним его вхождением в шаблон. 
-            Условие s+m < n необходимо для случая, когда шаблон 
-            встречается в конце текста */
-            s += (s + m < n)? m-badchar[txt[s + m]] : 1;
+            s += (s + m < n) ? m - badchar[txt[s + m]] : 1;
  
         }
  
         else
-            /* Сдвиньте шаблон так, чтобы плохой 
-            символ в тексте совпадал с последним его 
-            вхождением в шаблон. Функция max используется, 
-            чтобы убедиться, что мы получаем положительный 
-            сдвиг. Мы можем получить отрицательный сдвиг, 
-            если последнее появление плохого символа в шаблоне
-             находится справа от текущего символа.*/
             s += max(1, j - badchar[txt[s + j]]);
     }
 }
@@ -72,9 +57,8 @@ void search( string txt, string pat)
 //Исполнение
 int main()
 {
-    string txt= "ABAAABCD";
-    string pat = "ABC";
+    char txt[] = "стогистогстогигстогстогиглстогстогигластогигластог";
+    char pat[] = "игла";
     search(txt, pat);
     return 0;
 }
-  
