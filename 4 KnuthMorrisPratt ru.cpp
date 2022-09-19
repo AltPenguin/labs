@@ -46,7 +46,7 @@ void find_substring(string text, string pattern)
         if (text[i] == pattern[j])
         {
             if (++j == n) {
-                cout << (i - j + 1) << endl;
+                cout << (i - j + 1) / 2 << endl;
             }
         }
         else if (j > 0)
