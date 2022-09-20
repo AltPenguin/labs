@@ -17,7 +17,7 @@ void find_substring(string text, string pattern)
     // если длина текста меньше длины шаблона
     if (m < n)
     {
-        cout << "Pattern not found";
+        cout << "Шаблон не найден";
         return;
     }
  
