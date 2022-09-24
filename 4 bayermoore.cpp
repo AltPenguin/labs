@@ -57,8 +57,7 @@ void search(char *txt, char *pat)
 //Исполнение
 int main()
 {
-    char txt[] = "aabaabbaaabaabaabaabaabbaabb";
-    char pat[] = "aabbaab";
-    search(txt, pat);
+    search("стогистогстогигстогстогиглстогстогигластогигластог", "игла");
+    search("aabaabbaaabaabaabaabaabbaabb", "aabbaab");
     return 0;
 }
