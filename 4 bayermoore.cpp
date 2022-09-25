@@ -57,7 +57,6 @@ void search(char *txt, char *pat)
 //Исполнение
 int main()
 {
-    search("стогистогстогигстогстогиглстогстогигластогигластог", "игла");
     search("aabaabbaaabaabaabaabaabbaabb", "aabbaab");
     return 0;
 }
