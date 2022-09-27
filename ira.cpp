@@ -33,6 +33,6 @@ int main() {
 
         
 }
-cout << m << "\n" << d << endl;
+cout << "\n" << m << "\n" << d << endl;
     
 }
