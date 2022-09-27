@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+int d = 0;
 // объявляем пузырьки
 void bubbleSort(int array[], int size) {
 
@@ -13,6 +13,7 @@ void bubbleSort(int array[], int size) {
       if (array[i] > array[i + 1]) {
         
         // замена при соблюдении условий
+        d = d+1;
         int temp = array[i];
         array[i] = array[i + 1];
         array[i + 1] = temp;
@@ -40,4 +41,5 @@ int main() {
   
   printf("Отсортированный массив в порядке возрастания:\n");
   printArray(data, size);
+  printf("%d", d);
 }
