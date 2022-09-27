@@ -1,5 +1,6 @@
 #include <stdio.h>
 int d = 0;
+int m = 0;
 // объявляем пузырьки
 void bubbleSort(int array[], int size) {
 
@@ -9,6 +10,7 @@ void bubbleSort(int array[], int size) {
     // цикл сравнивающий элементы массива
     for (int i = 0; i < size - step - 1; ++i) {
       
+      m = m + 1;
       // сравниваем двух соседей
       if (array[i] > array[i + 1]) {
         
@@ -42,4 +44,5 @@ int main() {
   printf("Отсортированный массив в порядке возрастания:\n");
   printArray(data, size);
   printf("%d", d);
+  printf("%d", m);
 }
