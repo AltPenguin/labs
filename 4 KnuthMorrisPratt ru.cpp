@@ -1,7 +1,7 @@
+/*Вариант алгоритма Кнута-Морриса-Пратта для вводных данных на русском языке*/
 #include <iostream>
 using namespace std;
- 
-// Функция для реализации алгоритма KMP
+
 void find_substring(string text, string pattern)
 {
     int m = text.length();
@@ -63,3 +63,5 @@ int main()
     find_substring("стогистогстогигстогстогиглстогстогигластогигластог", "игла");
     return 0;
 }
+
+//Вывод: 34 4200

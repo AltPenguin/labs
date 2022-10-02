@@ -18,7 +18,7 @@ void selectionSort(int array[], int size) {
             m++;
             if (array[i] < array[min_idx])
                 min_idx = i;
-            d++;
+                d++;
         }
         swap(&array[min_idx], &array[step]);
     }
@@ -38,7 +38,7 @@ int main() {
     // интересуемся у массива, насколько он длинный?
     int size = sizeof(data) / sizeof(data[0]);
     selectionSort(data, size);
-    printf("Sorted array in Acsending Order:\n");
+    printf("Output:\n");
     printArray(data, size);
     printf("%d \n",m+d);
 }

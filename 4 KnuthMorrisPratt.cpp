@@ -1,3 +1,4 @@
+/*Вариант алгоритма Кнута-Морриса-Пратта для вводных данных на английском языке*/
 #include <iostream>
 using namespace std;
  
@@ -5,6 +6,7 @@ using namespace std;
 void find_substring(string text, string pattern)
 {
     int m = text.length();
+    
     int n = pattern.length();
  
     // если шаблон это пустая строка
@@ -63,3 +65,5 @@ int main()
     find_substring("aabaabbaaabaabaabaabaabbaabb", "aabbaab");
     return 0;
 }
+
+//Вывод: 20

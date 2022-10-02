@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define SIZE 1000
+#define SIZE 10000
 int d = 0;
 int m = 0;
 // объявляем пузырьки
@@ -35,16 +35,12 @@ void printArray(int array[SIZE], int size) {
 
 // Исполнение
 int main() {
-    int data[] = {};
-
+    int data[SIZE];
     // интересуемся у массива, насколько он длинный?
     int size = SIZE;
-
     bubbleSort(data, size);
-
     printf("Output:\n");
     printArray(data, size);
-    printf("%d", m);
-    printf("\n");
-    printf("%d", d);
+    printf("%d", m+d);
+
 }
