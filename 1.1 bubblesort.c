@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define SIZE 10000
+#define SIZE (Указываем число от 100 до 10000)
 int d = 0;
 int m = 0;
 // объявляем пузырьки
