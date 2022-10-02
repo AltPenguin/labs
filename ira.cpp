@@ -1,38 +1,49 @@
+#include<stdlib.h>
+#include <time.h>
+#include <iomanip>
 #include <iostream>
+ 
+void print(int, int); 
+void nya(int, int); 
 using namespace std;
-int main() {
-    /* Установим размер массива */
-    int n; // Кол-во элементов
-    n=7;
+int main()
+{
+    srand(time(NULL));
+    const int size = 20;
+    int array[size];
+    for (int i=0;i<size;i++)
+        array[i]=1+rand()%30;
+        cout << " Созданный массив" << "\n\n";
+        print(array, size);
+        nya (array, size);
+        cout << " Отсортированный массив" <<"\n\n";
+        print(array, size);
+        return 0;
+}
+void print(int arr, int sizeOfArray) 
+{
+    for (int k = 0; k < sizeOfArray; k++)
+    cout << arr[k]<<" ";
+    cout <<"\n\n";
+}
+void nya(int arr, int sizeOfArray)
+{
+    int countcompare=0; 
     int m = 0;
-    int d = 0;
-    int a[] = { 9, 5, 7, 3, 6, 4, 2 };
-        //Выведем наш массив
-        for (int i=0; i < n; i++) {
-            cout << a[i] << " ";
-
-        }
-        /* Отсортируем массив по убыванию */
-    for(int i = 1; i < n; ++i) {
-
-        for (int r = 0; r < n - i; r++) {
-            m++;
-            if (a[r] < a[r + 1]) {
-                d++;
-                // Обмен местами
-                int b = a[r];
-                a[r] = a[r + 1];
-                a[r + 1] = b;
-            }
+        for(int i = 1; i < sizeOfArray; i++) 
+            for(int j = 0; j < sizeOfArray - 1;j++) 
+    {
+            countcompare++;
+                if (arr[j ] < arr[j +1])
+        {
+                     m++;
+                     int tmp = arr[j + 1];
+                     arr[j + 1] = arr[j];
+                     arr[j] = tmp;
         }
     }
-    cout << endl;
-        /* Выведем отсортированный массив */
-    for (int i=0; i < n; i++) {
-        cout << a[i] << "";
-
-        
-}
-cout << "\n" << m << "\n" << d << endl;
-    
+    cout<<" Подсчёт сравнений:\n"<<countcompare <<"\n";
+    cout<<" Подсчёт перестановок:\n"<< m <<"\n";
+    cout<<" Зависимость сложности алгоритма:\n"<<countcompare + m <<"\n";
+    cout <<"\n";
 }
